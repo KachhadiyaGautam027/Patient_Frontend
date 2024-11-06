@@ -89,13 +89,13 @@ const Login = () => {
     }
   };
 
-  useEffect(() => {
-    const isAuthenticated = localStorage.getItem('token')
-    console.log('isAuthenticated ::::::::::::', isAuthenticated);
-    if (isAuthenticated) {
-      navigate('/dashboard')
-    }
-  })
+ useEffect(() => {
+  const isAuthenticated = localStorage.getItem("token");
+  console.log("isAuthenticated ::::::::::::", isAuthenticated);
+  if (isAuthenticated) {
+    navigate("/dashboard");
+  }
+}, [navigate]);
 
   return (
     <div className="grid md:grid-cols-2 grid-cols-1 min-h-screen">
