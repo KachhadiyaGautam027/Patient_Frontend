@@ -73,7 +73,7 @@ const PatientRegister = () => {
 
     try {
       console.log("Sending request to API..."); // Log before API call
-      const response = await fetch("https://backend-1-ripd.onrender.com/patient/signup", {
+      const response = await fetch("https://backend-2-myhm.onrender.com//patient/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

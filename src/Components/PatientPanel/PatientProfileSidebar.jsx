@@ -15,7 +15,7 @@ const PatientProfileSidebar = () => {
     const fetchPatientData = async () => {
       setLoading(true);
       try {
-        const response = await fetch("https://backend-1-ripd.onrender.com/patient/profile", {  
+        const response = await fetch("https://backend-2-myhm.onrender.com//patient/profile", {  
           method: "GET",
           credentials: "include",
         });
@@ -61,7 +61,7 @@ const PatientProfileSidebar = () => {
 
     try {
       const response = await axios.patch(
-        `https://backend-1-ripd.onrender.com/patient/update/${formData._id}`,
+        `https://backend-2-myhm.onrender.com//patient/update/${formData._id}`,
         formDataToSend,
         { withCredentials: true }
       );

@@ -16,7 +16,7 @@ const DoctorHeader = ({ toggleSidebar }) => {
   useEffect(() => {
     const fetchAdminData = async () => {
       try {
-        const response = await fetch("https://backend-1-ripd.onrender.com/doctor/profile", {
+        const response = await fetch("https://backend-2-myhm.onrender.com//doctor/profile", {
           method: "GET",
           credentials: "include",
         });

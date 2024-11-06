@@ -27,7 +27,7 @@ const DoctorProfile = () => {
   useEffect(() => {
     const fetchAdminData = async () => {
       try {
-        const response = await fetch("https://backend-1-ripd.onrender.com/doctor/profile", {
+        const response = await fetch("https://backend-2-myhm.onrender.com//doctor/profile", {
           method: "GET",
           credentials: "include",
         });
@@ -55,7 +55,7 @@ const DoctorProfile = () => {
     try {
       // Assuming profileData contains the updated information
       const response = await axios.patch(
-        `https://backend-1-ripd.onrender.com/doctor/update/${profileData._id}`, // Use the actual ID here
+        `https://backend-2-myhm.onrender.com//doctor/update/${profileData._id}`, // Use the actual ID here
         profileData,
         { withCredentials: true } // Ensure credentials are included for authentication
       );

@@ -81,7 +81,7 @@ const AddDoctorForm = () => {
     console.log("Token sent to server:", token);
 
     try {
-      const response = await axios.post("https://backend-1-ripd.onrender.com/admin/adddoctor", formData, {
+      const response = await axios.post("https://backend-2-myhm.onrender.com//admin/adddoctor", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,

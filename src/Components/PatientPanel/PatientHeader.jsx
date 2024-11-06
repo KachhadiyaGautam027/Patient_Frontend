@@ -17,7 +17,7 @@ const PatientHeader = ({ toggleSidebar }) => {
     const fetchAdminData = async () => {
       try {
         console.log("Fetching patient data...");
-        const response = await fetch("https://backend-1-ripd.onrender.com/patient/profile", {
+        const response = await fetch("https://backend-2-myhm.onrender.com//patient/profile", {
           method: "GET",
           credentials: "include",
         });

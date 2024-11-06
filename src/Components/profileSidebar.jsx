@@ -11,7 +11,7 @@ const ProfileSidebar = () => {
     useEffect(() => {
         const fetchAdminData = async () => {
             try {
-                const response = await fetch("https://backend-1-ripd.onrender.com/admin/profile", {
+                const response = await fetch("https://backend-2-myhm.onrender.com//admin/profile", {
                     method: "GET",
                     credentials: "include",
                 });
@@ -40,7 +40,7 @@ const ProfileSidebar = () => {
         formData.append("lastname", profileData.lastname);
 
         try {
-            const response = await fetch("https://backend-1-ripd.onrender.com/admin/update", {
+            const response = await fetch("https://backend-2-myhm.onrender.com//admin/update", {
                 method: "PATCH",
                 body: formData,
                 credentials: "include",
