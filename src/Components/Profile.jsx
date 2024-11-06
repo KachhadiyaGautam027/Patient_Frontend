@@ -26,7 +26,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchAdminData = async () => {
       try {
-        const response = await fetch("https://backend-2-myhm.onrender.com//admin/profile", {
+        const response = await fetch("https://backend-1-msl6.onrender.com/admin/profile", {
           method: "GET",
           credentials: "include",
         });
@@ -52,7 +52,7 @@ const Profile = () => {
     setErrorMessage("");
     try {
       const response = await axios.patch(
-        `https://backend-2-myhm.onrender.com//admin/update`,
+        `https://backend-1-msl6.onrender.com/admin/update`,
         profileData,
         { withCredentials: true }
       );

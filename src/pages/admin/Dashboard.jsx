@@ -18,7 +18,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchDoctorData = async () => {
       try {
-        const response = await fetch("https://backend-2-myhm.onrender.com//admin/alldoctors", {
+        const response = await fetch("https://backend-1-msl6.onrender.com/admin/alldoctors", {
           method: "GET",
           credentials: "include",
         });

@@ -51,7 +51,7 @@ const PatientLogin = () => {
     }
 
     try {
-      const response = await fetch("https://backend-2-myhm.onrender.com//patient/login", {
+      const response = await fetch("https://backend-1-msl6.onrender.com/patient/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

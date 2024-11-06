@@ -38,7 +38,7 @@ const PatientProfile = () => {
     const fetchAdminData = async () => {
       try {
         console.log("Fetching patient data...");
-        const response = await fetch("https://backend-2-myhm.onrender.com//patient/profile", {
+        const response = await fetch("https://backend-1-msl6.onrender.com/patient/profile", {
           method: "GET",
           credentials: "include",
         });
@@ -69,7 +69,7 @@ const PatientProfile = () => {
 
     try {
       const response = await axios.patch(
-        `https://backend-2-myhm.onrender.com//patient/update/${patientId}`,
+        `https://backend-1-msl6.onrender.com/patient/update/${patientId}`,
         formData,
         { withCredentials: true }
       );

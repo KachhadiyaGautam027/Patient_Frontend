@@ -31,7 +31,7 @@ const DoctorLogin = () => {
     console.log("Form Data:", formData);
 
     try {
-      const response = await fetch("https://backend-2-myhm.onrender.com//doctor/doctorlogin", {
+      const response = await fetch("https://backend-1-msl6.onrender.com/doctor/doctorlogin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

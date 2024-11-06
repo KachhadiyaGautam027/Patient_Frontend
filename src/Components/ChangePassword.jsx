@@ -27,7 +27,7 @@ const ChangePassword = () => {
     }
 
     try {
-      const response = await axios.patch("https://backend-2-myhm.onrender.com//admin/resetpassword", {
+      const response = await axios.patch("https://backend-1-msl6.onrender.com/admin/resetpassword", {
         oldpassword: oldPassword,
         newpassword: newPassword,
         confirmpassword: confirmPassword,

@@ -26,7 +26,7 @@ const DoctorChangePassword = () => {
 
     try {
       const response = await axios.patch(
-        "https://backend-2-myhm.onrender.com//doctor/resetpassword",
+        "https://backend-1-msl6.onrender.com/doctor/resetpassword",
         {
           oldpassword: oldPassword,
           newpassword: newPassword,

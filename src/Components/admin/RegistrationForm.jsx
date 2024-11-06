@@ -70,7 +70,7 @@ const Register = () => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const response = await fetch("https://backend-2-myhm.onrender.com//admin/signup", {
+        const response = await fetch("https://backend-1-msl6.onrender.com/admin/signup", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

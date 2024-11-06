@@ -42,7 +42,7 @@ const Login = () => {
     }
 
     try {
-      const response = await fetch("https://backend-2-myhm.onrender.com//admin/login", {
+      const response = await fetch("https://backend-1-msl6.onrender.com/admin/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
