@@ -22,7 +22,7 @@ const Login = () => {
 
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
 
@@ -41,61 +41,39 @@ const Login = () => {
       return;
     }
 
-    try {
-      const response = await fetch("https://backend-1-msl6.onrender.com/admin/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-        credentials: "include",
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        //   localStorage.setItem("token", result.token);
-        //   console.log("Login successful:", result);
-        //   navigate("/adminDashboard");
-        // } else {
-        //   setErrors({
-        //     apiError: result.message || "Login failed, please try again.",
-        //   });
-
-        //   localStorage.setItem("token", result.token);
-        //   console.log("Login successful:", result);
-        //   navigate("/adminDashboard");
-        // } else {
-        //   setErrors({
-        //     apiError: result.message || "Login failed, please try again.",
-        //   });
-
-        localStorage.setItem("token", result.Admintoken);
+    fetch("https://backend-1-msl6.onrender.com/admin/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+      credentials: "include", // Ensures cookies are included
+    })
+      .then(response => {
+        if (!response.ok) {
+          return response.json().then(err => { throw new Error(err.message || "Login failed, please try again."); });
+        }
+        return response.json(); // Parse JSON if successful
+      })
+      .then(result => {
+        localStorage.setItem("token", result.Admintoken); // Store token
         toast.success("Login successful! Redirecting...");
         navigate("/dashboard");
-      } else {
-        toast.error(result.message || "Login failed, please try again.");
-        setErrors({
-          apiError: result.message || "Login failed, please try again.",
-        });
-        setErrors({
-          apiError: result.message || "Login failed, please try again.",
-        });
-      }
-    } catch (error) {
-      console.error("Network error:", error);
-      toast.error("Network error occurred, please try again.");
-      setErrors({ apiError: "Network error occurred, please try again." });
-    }
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        toast.error(error.message || "Network error occurred, please try again.");
+        setErrors({ apiError: error.message || "Network error occurred, please try again." });
+      });
   };
 
   useEffect(() => {
-    const isAuthenticated = localStorage.getItem('token')
+    const isAuthenticated = localStorage.getItem('token');
     console.log('isAuthenticated ::::::::::::', isAuthenticated);
     if (isAuthenticated) {
-      navigate('/dashboard')
+      navigate('/dashboard');
     }
-  })
+  }, [navigate]);
 
   return (
     <div className="grid md:grid-cols-2 grid-cols-1 min-h-screen">
@@ -116,9 +94,8 @@ const Login = () => {
                 placeholder=" "
                 value={formData.email}
                 onChange={handleChange}
-                className={`peer block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 focus:ring-0 ${
-                  errors.email ? "border-red" : "border-gray-300"
-                }`}
+                className={`peer block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 focus:ring-0 ${errors.email ? "border-red" : "border-gray-300"
+                  }`}
               />
               <label
                 htmlFor="email"
@@ -138,9 +115,8 @@ const Login = () => {
                 placeholder=" "
                 value={formData.password}
                 onChange={handleChange}
-                className={`peer block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 focus:ring-0 ${
-                  errors.password ? "border-red" : "border-gray-300"
-                }`}
+                className={`peer block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 focus:ring-0 ${errors.password ? "border-red" : "border-gray-300"
+                  }`}
               />
               <label
                 htmlFor="password"
