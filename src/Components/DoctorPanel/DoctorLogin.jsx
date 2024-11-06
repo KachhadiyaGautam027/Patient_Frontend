@@ -31,7 +31,7 @@ const DoctorLogin = () => {
     console.log("Form Data:", formData);
 
     try {
-      const response = await fetch("http://localhost:8090/doctor/doctorlogin", {
+      const response = await fetch("https://backend-1-ripd.onrender.com/doctor/doctorlogin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

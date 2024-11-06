@@ -26,7 +26,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchAdminData = async () => {
       try {
-        const response = await fetch("http://localhost:8090/admin/profile", {
+        const response = await fetch("https://backend-1-ripd.onrender.com/admin/profile", {
           method: "GET",
           credentials: "include",
         });
@@ -52,7 +52,7 @@ const Profile = () => {
     setErrorMessage("");
     try {
       const response = await axios.patch(
-        `http://localhost:8090/admin/update`,
+        `https://backend-1-ripd.onrender.com/admin/update`,
         profileData,
         { withCredentials: true }
       );

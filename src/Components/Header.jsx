@@ -14,7 +14,7 @@ const Header = ({ toggleSidebar }) => {
   useEffect(() => {
     const fetchAdminData = async () => {
       try {
-        const response = await fetch("http://localhost:8090/admin/profile", {
+        const response = await fetch("https://backend-1-ripd.onrender.com/admin/profile", {
           method: "GET",
           credentials: "include",
         });

@@ -51,7 +51,7 @@ const PatientLogin = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:8090/patient/login", {
+      const response = await fetch("https://backend-1-ripd.onrender.com/patient/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
